@@ -1,23 +1,24 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #fff;
-  color: #333;
-}
-
-header {
-  background-color: #f26b38;
-  color: white;
-  text-align: center;
-  padding: 2rem 1rem;
-}
-.carousel {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  header {
+    background-color: #f26b38;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  .carousel {
     overflow: hidden;
     max-height: 300px;
     width: 100vw;
@@ -26,65 +27,68 @@ header {
   
   .slides {
     display: flex;
-    width: max-content;
     animation: scroll 30s linear infinite;
   }
   
   .slides img {
+    flex-shrink: 0;
     width: 100vw;
-    height: auto;
+    height: 300px;
     object-fit: cover;
   }
   
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .slides img {
+      height: 200px;
+    }
+  
+    .btn {
+      width: 100%;
+      max-width: 300px;
+    }
   }
   
-
-.sobre, .contato {
-  padding: 2rem;
-  text-align: center;
-}
-
-.botoes {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.btn {
-  background-color: #f26b38;
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #d85a2f;
-}
-
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .slides {
-    flex-direction: column;
+  /* Animação baseada em 6 imagens */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-600vw); /* 6 imagens × 100vw */
+    }
   }
-
+  
+  .sobre, .contato {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .botoes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
   .btn {
-    width: 100%;
-    max-width: 300px;
+    background-color: #f26b38;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease;
   }
-}
-
-
+  
+  .btn:hover {
+    background-color: #d85a2f;
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  

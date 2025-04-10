@@ -28,11 +28,10 @@ if ("serviceWorker" in navigator) {
   }
   
   // script.js
-document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
     const track = document.getElementById("slide-track");
     const slides = Array.from(track.children);
-  
-    // Duplica as imagens para fazer um looping suave
+
     slides.forEach(slide => {
       const clone = slide.cloneNode(true);
       track.appendChild(clone);

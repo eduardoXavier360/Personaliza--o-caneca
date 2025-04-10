@@ -17,37 +17,30 @@ header {
   text-align: center;
   padding: 2rem 1rem;
 }
-
 .carousel {
-  position: relative;
-  overflow: hidden;
-  max-height: 300px;
-}
-
-.slides {
+    overflow: hidden;
+    max-height: 300px;
+    width: 100vw;
+    position: relative;
+  }
+  
+  .slides {
     display: flex;
-    width: 900vw; /* 9 imagens */
-    animation: slide 36s infinite; /* 4s por imagem (ajustável) */
+    width: max-content;
+    animation: scroll 60s linear infinite;
   }
-
-.slides img {
-  width: 100vw;
-  height: auto;
-  object-fit: cover;
-}
-
-@keyframes slide {
-    0%    { transform: translateX(0); }
-    11.11%  { transform: translateX(-100vw); }
-    22.22%  { transform: translateX(-200vw); }
-    33.33%  { transform: translateX(-300vw); }
-    44.44%  { transform: translateX(-400vw); }
-    55.55%  { transform: translateX(-500vw); }
-    66.66%  { transform: translateX(-600vw); }
-    77.77%  { transform: translateX(-700vw); }
-    88.88%  { transform: translateX(-800vw); }
-    100%   { transform: translateX(-800vw); }
+  
+  .slides img {
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
   }
+  
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  
 
 .sobre, .contato {
   padding: 2rem;

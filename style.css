@@ -1,89 +1,97 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+header {
+  background-color: #f26b38;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  max-height: 300px;
+}
+
+.slides {
+    display: flex;
+    width: 900vw; /* 9 imagens */
+    animation: slide 36s infinite; /* 4s por imagem (ajustável) */
   }
-  
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #fff;
-    color: #333;
+
+.slides img {
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+}
+
+@keyframes slide {
+    0%    { transform: translateX(0); }
+    11.11%  { transform: translateX(-100vw); }
+    22.22%  { transform: translateX(-200vw); }
+    33.33%  { transform: translateX(-300vw); }
+    44.44%  { transform: translateX(-400vw); }
+    55.55%  { transform: translateX(-500vw); }
+    66.66%  { transform: translateX(-600vw); }
+    77.77%  { transform: translateX(-700vw); }
+    88.88%  { transform: translateX(-800vw); }
+    100%   { transform: translateX(-800vw); }
   }
-  
-  header {
-    background-color: #f26b38;
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
-  }
-  
-  .carousel {
-    position: relative;
-    overflow: hidden;
-    max-height: 300px;
-  }
-  
+
+.sobre, .contato {
+  padding: 2rem;
+  text-align: center;
+}
+
+.botoes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  background-color: #f26b38;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #d85a2f;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
   .slides {
-    display: flex;
-    width: 300%;
-    animation: slide 10s infinite;
+    flex-direction: column;
   }
-  
-  .slides img {
-    width: 100vw;
-    height: auto;
-    object-fit: cover;
-  }
-  
-  @keyframes slide {
-    0%, 33% { transform: translateX(0); }
-    34%, 66% { transform: translateX(-100vw); }
-    67%, 100% { transform: translateX(-200vw); }
-  }
-  
-  .sobre, .contato {
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  .botoes {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  
+
   .btn {
-    background-color: #f26b38;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background 0.3s ease;
+    width: 100%;
+    max-width: 300px;
   }
-  
-  .btn:hover {
-    background-color: #d85a2f;
-  }
-  
-  footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .slides {
-      flex-direction: column;
-    }
-  
-    .btn {
-      width: 100%;
-      max-width: 300px;
-    }
-  }
-  
+}
+
+
